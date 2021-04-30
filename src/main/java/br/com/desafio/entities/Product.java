@@ -19,6 +19,7 @@ public class Product {
 	@Column(name = "id", updatable = false, nullable = false)
 	private UUID id;
 
+	@Not
 	private String name;
 
 	private String description;
