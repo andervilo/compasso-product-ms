@@ -10,5 +10,5 @@ Desafio Compasso UOL
 - Abrir na IDE de sua preferência
 - Startar o projeto
 
-## Documentação
+## Documentação Swagger
 http://localhost:9999/swagger-ui.htm
