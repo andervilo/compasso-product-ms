@@ -7,6 +7,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -19,11 +23,15 @@ public class Product {
 	@Column(name = "id", updatable = false, nullable = false)
 	private UUID id;
 
-	@Not
+	@NotBlank(message = "Campo NAME é obrigatório!")
 	private String name;
 
+	@NotBlank(message = "Campo DESCRIPTION é obrigatório!")
 	private String description;
 
+	@DecimalMin(value = "0.0", inclusive = false, message = "Campo PRICE deve ser maior que 0!")
+    @Digits(integer=9, fraction=2)
+	@NotNull(message = "Campo DESCRIPTION é obrigatório!")
 	private BigDecimal price;
 
 	public Product() {
